@@ -11,11 +11,11 @@
 ## Configure policies
 
 6. Create policy `.hcl` file
-</br> e.g. ```
+e.g. ```
 path "secret/epam/*" {
         policy = "write"
-}
-```
+}```
+
 7. Run `vault policy-write <policy_name> <file_name>.hcl`
 
 ## Configure github access
@@ -37,11 +37,10 @@ path "secret/epam/*" {
 1. Directories `./vault/file` and `./vault/configg` should exist
 2. `./vault/file:/vault/file` stores secrets and should be backed up
 3. `./vault/config/config.json` should be following:
-</br> ```
+```
 {
   "backend": {"file": {"path": "/vault/file"}},
   "listener": {"tcp": {"address": "0.0.0.0:8200", "tls_disable": 1}},
   "default_lease_ttl": "168h",
   "max_lease_ttl": "720h"
-}
-```
+}```
