@@ -1,0 +1,26 @@
+version: '2.1'
+services:
+  vault:
+    image: vault
+    container_name: vault
+    ports:
+      - "8200:8200"
+    volumes:
+      - ./vault/file:/vault/file:rw
+      - ./vault/config:/vault/config:rw
+    cap_add:
+      - IPC_LOCK
+    entrypoint: vault server -config=/vault/config/
+
+  jenkins:
+    restart: always
+    image: "jenkins:latest"
+    ports:
+      - "127.0.0.1:50000:50000"
+      - "0.0.0.0:12345:12345"
+      - "0.0.0.0:12346:12346"
+    expose:
+      - "8080:8080"
+    volumes:
+      - /var/server/config/jenkins/master:/var/jenkins_home
+      - /home/jenkins/.ssh:/var/jenkins_home/.ssh
