@@ -35,7 +35,7 @@ path "secret/epam/*" {
 * Delete: `vault delete <secret_path>`
 
 ## Installing Vault with Docker compose:
-1. Directories `./vault/file` and `./vault/configg` should exist
+1. Directories `./vault/file` and `./vault/config` should exist
 2. `./vault/file:/vault/file` stores secrets and should be backed up
 3. `./vault/config/config.json` should be following:
 ```
