@@ -11,11 +11,12 @@
 ## Configure policies
 
 6. Create policy `.hcl` file
-e.g. ```
+</br> e.g.
+```
 path "secret/epam/*" {
         policy = "write"
-}```
-
+}
+```
 7. Run `vault policy-write <policy_name> <file_name>.hcl`
 
 ## Configure github access
@@ -43,4 +44,5 @@ path "secret/epam/*" {
   "listener": {"tcp": {"address": "0.0.0.0:8200", "tls_disable": 1}},
   "default_lease_ttl": "168h",
   "max_lease_ttl": "720h"
-}```
+}
+```
