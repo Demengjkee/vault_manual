@@ -2,7 +2,7 @@
 
 ## Initial Setup
 
-1. Install Vault server (e.g. with docker-compose)
+1. Install Vault server (e.g. with docker-compose) and download Vault binary file or use docker container for requests
 2. Export `VAULT_ADDR` env variable (e.g. `http://127.0.0.1:8200` )
 3. Use `vault init` command and save **unseal keys** and **Root token**
 4. Unseal vault with `vault unseal <unseal_key>` command (buy default you'll need to run this command with any 3 keys of 5 generated)
